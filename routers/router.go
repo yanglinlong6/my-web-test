@@ -21,11 +21,15 @@ func init() {
 			),
 		),
 		beego.NSNamespace("/user",
-			beego.NSRouter("/", &controllers.UserController{}, "Post:Post"),
+			//beego.NSRouter("/", &controllers.UserController{}, "Post:Post"),
+			beego.NSRouter("/", &controllers.UserController{}),
 		),
-		beego.NSNamespace("/yang",
-			beego.NSRouter("/get", &controllers.YangController{}, "GET:GetOne"),
-		),
+		beego.NSNamespace("/yang"),//beego.NSRouter("/getone", &controllers.YangController{}, "GET:GetOne"),
+		//beego.NSRouter("/get", &controllers.YangController{}),
+		//beego.NSInclude(&controllers.YangController{}),
+
 	)
+	beego.AutoRouter(&controllers.YangController{})
 	beego.AddNamespace(ns)
+
 }
