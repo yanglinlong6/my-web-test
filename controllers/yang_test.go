@@ -9,12 +9,23 @@ import (
 )
 
 func init() {
+	// dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&collation=%s&%s",
+	// 	"dev_user",
+	// 	"df234fl",
+	// 	"192.168.3.190",
+	// 	3306,
+	// 	"neshield",
+	// 	"utf8",
+	// 	"utf8mb4_general_ci",
+	// 	"parseTime=True&loc=Local&timeout=10000ms",
+	// )
+	
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&collation=%s&%s",
-		"dev_user",
-		"df234fl",
-		"192.168.3.190",
+		"root",
+		"986203",
+		"112.74.125.238",
 		3306,
-		"neshield",
+		"easytest",
 		"utf8",
 		"utf8mb4_general_ci",
 		"parseTime=True&loc=Local&timeout=10000ms",
