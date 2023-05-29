@@ -36,6 +36,7 @@ func (u *UserController) Get() {
 			u.Data["json"] = user
 		}
 	}
+	u.Data["json"] = "user"
 	u.ServeJSON()
 }
 
