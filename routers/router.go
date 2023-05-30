@@ -32,7 +32,12 @@ func init() {
 		),
 		//beego.NSRouter("/get", &controllers.YangController{}),
 		//beego.NSInclude(&controllers.YangController{}),
-
+		beego.NSNamespace("/zuoshe",
+			// beego.NSRouter("/getone", &controllers.ZuosheController{}, "GET:GetOne"),
+			// beego.NSInclude(&controllers.ZuosheController{}),
+			// 常用方案
+			beego.NSAutoRouter(&controllers.ZuosheController{}),
+		),
 	)
 	// beego.AutoRouter(&controllers.YangController{})
 	beego.AddNamespace(ns)
