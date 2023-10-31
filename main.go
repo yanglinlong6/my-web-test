@@ -34,6 +34,12 @@ func init() {
 
 	orm.RegisterDataBase("default", "mysql", dsn, 30)
 	orm.RegisterModel(new(models.TNesDevice))
+	orm.RegisterModel(new(models.Order))
+	err := orm.RunSyncdb("default", false, true)
+	if err != nil {
+		beego.Error(err)
+	}
+
 }
 
 func main() {
@@ -41,5 +47,12 @@ func main() {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
+	//比较常用的是 init,tidy, edit
+	//go mod tidy
+	//go mod vendor
+	//go mod init helloworld
+	//bee api testapi
+	//bee generate controller hello
+	//bee run
 	beego.Run()
 }

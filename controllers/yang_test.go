@@ -19,7 +19,7 @@ func init() {
 	// 	"utf8mb4_general_ci",
 	// 	"parseTime=True&loc=Local&timeout=10000ms",
 	// )
-	
+
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&collation=%s&%s",
 		"root",
 		"986203",
@@ -33,6 +33,7 @@ func init() {
 
 	orm.RegisterDataBase("default", "mysql", dsn, 30)
 	orm.RegisterModel(new(models.TNesDevice))
+	orm.RegisterModel(new(models.Order))
 }
 
 func TestYangController_GetOne(t *testing.T) {
