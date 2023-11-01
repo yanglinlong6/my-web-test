@@ -33,9 +33,9 @@ func init() {
 	)
 
 	orm.RegisterDataBase("default", "mysql", dsn, 30)
-	orm.RegisterModel(new(models.TNesDevice))
-	orm.RegisterModel(new(models.Order))
+	orm.RegisterModel(new(models.TNesDevice), new(models.Order))
 	err := orm.RunSyncdb("default", false, true)
+	//err := orm.RunSyncdb("default", true, true)
 	if err != nil {
 		beego.Error(err)
 	}

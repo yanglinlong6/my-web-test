@@ -6,6 +6,7 @@ type Order struct {
 	OrderTitle   string `json:"order_title"`
 	OrderContent string `json:"order_content"`
 	Status       int    `json:"status"`
+	Remark       string `orm:"column(remark);null" json:"remark"`
 }
 
 func (Order) TableName() string {
